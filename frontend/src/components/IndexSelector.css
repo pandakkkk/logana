@@ -1,0 +1,152 @@
+.index-selector {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.index-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.index-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2d3748;
+}
+
+.refresh-button {
+  padding: 8px 16px;
+  background-color: #edf2f7;
+  border: none;
+  border-radius: 4px;
+  color: #4a5568;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.refresh-button:hover {
+  background-color: #e2e8f0;
+}
+
+.select-container {
+  margin-bottom: 20px;
+}
+
+.index-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.index-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #2d3748;
+  background-color: white;
+  transition: all 0.2s;
+}
+
+.index-select:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+.index-details {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #f7fafc;
+  border-radius: 6px;
+}
+
+.index-info {
+  display: grid;
+  gap: 12px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+}
+
+.info-label {
+  width: 100px;
+  font-weight: 500;
+  color: #718096;
+}
+
+.info-value {
+  color: #2d3748;
+}
+
+.health-status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.health-green {
+  background-color: #c6f6d5;
+  color: #22543d;
+}
+
+.health-yellow {
+  background-color: #fefcbf;
+  color: #744210;
+}
+
+.health-red {
+  background-color: #fed7d7;
+  color: #822727;
+}
+
+.loading {
+  padding: 40px;
+  text-align: center;
+  color: #718096;
+}
+
+.error {
+  padding: 16px;
+  background-color: #fff5f5;
+  border: 1px solid #feb2b2;
+  border-radius: 4px;
+  color: #c53030;
+  margin: 20px 0;
+}
+
+.retry-button {
+  display: block;
+  margin: 12px auto 0;
+  padding: 8px 16px;
+  background-color: #c53030;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.retry-button:hover {
+  background-color: #9b2c2c;
+}
+
+.no-indices {
+  padding: 40px;
+  text-align: center;
+  color: #718096;
+  background-color: #f7fafc;
+  border-radius: 6px;
+  font-size: 0.875rem;
+} 

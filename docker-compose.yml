@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.13
+    environment:
+      - node.name=es01
+      - cluster.name=docker-cluster
+      - discovery.type=single-node
+      - bootstrap.memory_lock=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false
+      - xpack.monitoring.enabled=false
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+    ports:
+      - "9200:9200"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200 >/dev/null || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - GIN_MODE=debug
+      - ELASTICSEARCH_INDEX=logs
+    ports:
+      - "8080:8080"
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  es_data:
+    driver: local 

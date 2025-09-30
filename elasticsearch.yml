@@ -1,0 +1,34 @@
+# Cluster settings
+cluster.name: "docker-cluster"
+node.name: "single-node"
+
+# Network settings
+network.host: 0.0.0.0
+http.port: 9200
+
+# Memory settings
+bootstrap.memory_lock: true
+
+# Discovery settings
+discovery.type: single-node
+
+# Security settings
+xpack.security.enabled: false
+
+# Path settings
+path.data: /usr/share/elasticsearch/data
+path.logs: /usr/share/elasticsearch/logs
+
+# Performance settings
+indices.memory.index_buffer_size: 10%
+indices.queries.cache.size: 5%
+search.max_buckets: 10000
+
+# Thread pool settings
+thread_pool:
+  write:
+    size: 1
+    queue_size: 1000
+  search:
+    size: 1
+    queue_size: 1000 

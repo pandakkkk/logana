@@ -1,0 +1,24 @@
+{
+  "name": "logana",
+  "version": "1.0.0",
+  "description": "Elasticsearch log analyzer",
+  "scripts": {
+    "start": "./start.sh",
+    "install-deps": "cd frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "backend": "cd $GOPATH/src/github.com/sanjeevmurmu/logana/backend && go run main.go",
+    "frontend": "cd frontend && npm start"
+  },
+  "author": "",
+  "license": "ISC",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pandakkkk/logana.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pandakkkk/logana/issues"
+  },
+  "homepage": "https://github.com/pandakkkk/logana#readme"
+}
