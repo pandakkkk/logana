@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import LogStream from './components/LogStream'
+import AnalyticsChart from './components/AnalyticsChart'
 
 function App() {
+  // Example chart data
+  const data = [
+    { timestamp: "2025-09-30", count: 5 },
+    { timestamp: "2025-10-01", count: 8 },
+  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-gray-100 p-8">
+      <h1 className="font-bold text-3xl mb-8">Logana Dashboard</h1>
+      <LogStream />
+      <div className="mt-8">
+        <AnalyticsChart data={data} />
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
